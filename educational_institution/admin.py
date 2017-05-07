@@ -4,6 +4,7 @@ from educational_institution.models import Educational_institution, City, Educat
 # Register your models here.
 class Educational_institution_Admin(admin.ModelAdmin):
     list_filter = ['founding_date']
+    search_fields = ['educational_institution_name']
 
 admin.site.register(Educational_institution, Educational_institution_Admin)
 admin.site.register(City)

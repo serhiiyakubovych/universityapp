@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block educational_institution %}
+{% for city in cities %}
+<h1>
+    <a href="../get/{{ city.id }}">
+        {{ city.city_name }}
+    </a>
+</h1>
+<p><b>Population:</b> {{ city.population }}</p>
+<hr>
+{% endfor %}
+{% endblock %}

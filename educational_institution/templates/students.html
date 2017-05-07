@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block educational_institution %}
+{% for student in students %}
+<h1>
+    <a href="../get/{{ student.id }}">
+        {{ student.student_name }}
+    </a>
+</h1>
+<p><b>Average mark:</b> {{ student.average_mark }}</p>
+<p><b>Birth date:</b> {{ student.birth_date }}</p>
+<p><b>City:</b> {{ student.city }}</p>
+<hr>
+{% endfor %}
+{% endblock %}

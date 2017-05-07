@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Serhii Yakubovych">
+    <title>Information system of educational institutions | By Serhii Yakubovych</title>
+    <link rel="icon" href="{% static "images/favicon.ico" %}">
+    <link rel="stylesheet" href="{% static "libs/bootstrap/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "libs/bootstrap/font-awesome/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+</head>
+<body>
+    <header class="header">
+        <nav class="page-nav clearfix">
+            <h1 class="page-nav__logo"><a href="/">Information system</a></h1>
+            <ul class="page-nav__menu">
+                <li class="page-nav__menu-item"><a href="/">Home</a></li>
+                <li class="page-nav__menu-item"><a href="/city/all">City</a></li>
+                <li class="page-nav__menu-item"><a href="/educational_institution_type/all">Educational institution type</a></li>
+                <li class="page-nav__menu-item"><a href="/payment_type/all">Type of payment for education</a></li>
+                <li class="page-nav__menu-item"><a href="/educational_direction/all">Educational direction</a></li>
+                <li class="page-nav__menu-item"><a href="/educational_method/all">Educational method</a></li>
+                <li class="page-nav__menu-item"><a href="/educational_institution/all">Educational institution</a></li>
+                <li class="page-nav__menu-item"><a href="/faculty/all">Faculty</a></li>
+                <li class="page-nav__menu-item"><a href="/student/all">Student</a></li>
+                <li class="page-nav__menu-item"><a href="/admin">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page-content container-fluid">
+        {% block educational_institution %}
+        {% endblock %}
+    </main>
+    <footer class="footer">
+        <p>Serhii Yakubovych, KB-14-1</p>
+    </footer>
+</body>
+</html>

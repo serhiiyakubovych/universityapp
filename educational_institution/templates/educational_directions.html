@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block educational_institution %}
+{% for educational_direction in educational_directions %}
+<h1>
+    <a href="../get/{{ educational_direction.id }}/">
+        {{ educational_direction.educational_direction_name }}
+    </a>
+</h1>
+<hr>
+{% endfor %}
+{% endblock %}

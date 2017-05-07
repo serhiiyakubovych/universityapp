@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block educational_institution %}
+{% for faculty in faculties %}
+<h1>
+    <a href="../get/{{ faculty.id }}">
+        {{ faculty.faculty_name }}
+    </a>
+</h1>
+<p><b>Educational institution:</b> {{ faculty.educational_institution }}</p>
+<hr>
+{% endfor %}
+{% endblock %}

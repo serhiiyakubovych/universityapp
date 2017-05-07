@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block educational_institution %}
+<div class="search-block">
+    <form action="">
+        <input type="text" name="q" class="form-control" placeholder="Search" value="{{ request.GET.q }}" >
+        <input type="submit" class="btn btn-default btn-block" value="Search">
+    </form>
+</div>
+{% for educational_institution in educational_institutions %}
+<h1>
+    <a href="../get/{{ educational_institution.id }}">
+        {{ educational_institution.educational_institution_name }}
+    </a>
+</h1>
+<p><b>Accreditation level:</b> {{ educational_institution.accreditation_level }}</p>
+<p><b>License for educational activity:</b> {{ educational_institution.license_for_educational_activity }}</p>
+<p><b>Founding date:</b> {{ educational_institution.founding_date }}</p>
+<p><b>City:</b> {{ educational_institution.city }}</p>
+<p><b>Type:</b> {{ educational_institution.type }}</p>
+<hr>
+{% endfor %}
+{% endblock %}

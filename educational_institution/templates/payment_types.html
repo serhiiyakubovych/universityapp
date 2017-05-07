@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block educational_institution %}
+{% for payment_type in payment_types %}
+<h1>
+    <a href="../get/{{ payment_type.id }}">
+        {{ payment_type.type_of_payment_for_education }}
+    </a>
+</h1>
+<hr>
+{% endfor %}
+{% endblock %}

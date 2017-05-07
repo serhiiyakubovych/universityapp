@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block educational_institution %}
+<h1>{{ city.city_name }}</h1>
+<hr>
+<p><b>Population:</b> {{ city.population }}</p>
+<hr>
+<div>
+    <a href="/city/all/">&larr; Back to the cities list</a>
+</div>
+{% endblock %}

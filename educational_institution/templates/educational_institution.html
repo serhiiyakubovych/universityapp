@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block educational_institution %}
+<h1>{{ educational_institution.educational_institution_name }}</h1>
+<hr>
+<p><b>Accreditation level:</b> {{ educational_institution.accreditation_level }}</p>
+<p><b>License for educational activity:</b> {{ educational_institution.license_for_educational_activity }}</p>
+<p><b>Founding date:</b> {{ educational_institution.founding_date }}</p>
+<p><b>City:</b> {{ educational_institution.city }}</p>
+<p><b>Type:</b> {{ educational_institution.type }}</p>
+<div><b>Types of payment for education:</b>
+    <ul>
+        {% for payment_type in educational_institution.type_of_payment_for_education.all %}
+        <li>{{ payment_type }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<div><b>Educational directions:</b>
+    <ul>
+        {% for educational_direction in educational_institution.educational_direction.all %}
+        <li>{{ educational_direction }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<div><b>Educational methods:</b>
+    <ul>
+        {% for educational_method in educational_institution.educational_method.all %}
+        <li>{{ educational_method }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<hr>
+<div>
+    <a href="/educational_institution/all/">&larr; Back to the educational institution list</a>
+</div>
+{% endblock %}

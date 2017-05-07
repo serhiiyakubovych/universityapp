@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block educational_institution %}
+{% for educational_institution_type in educational_institution_types %}
+<h1>
+    <a href="../get/{{ educational_institution_type.id }}/">
+        {{ educational_institution_type.educational_institution_type }}
+    </a>
+</h1>
+<hr>
+{% endfor %}
+{% endblock %}
