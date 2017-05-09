@@ -15,7 +15,15 @@ def home(request):
 
 
 def cities(request):
-    return render_to_response('cities.html', {'cities': City.objects.all})
+    query = request.GET.get("q")
+    if query:
+        city_list = City.objects.filter(
+            Q(city_name__icontains=query) |
+            Q(population__icontains=query)
+        )
+    else:
+        city_list = City.objects.all
+    return render_to_response('cities.html', {'cities': city_list, 'request': request})
 
 
 def city(request, city_id=1):
@@ -23,8 +31,15 @@ def city(request, city_id=1):
 
 
 def educational_institution_types(request):
+    query = request.GET.get("q")
+    if query:
+        educational_institution_type_list = Educational_institution_type.objects.filter(
+            Q(educational_institution_type__icontains=query)
+        )
+    else:
+        educational_institution_type_list = Educational_institution_type.objects.all
     return render_to_response('educational_institution_types.html',
-                              {'educational_institution_types': Educational_institution_type.objects.all})
+                              {'educational_institution_types': educational_institution_type_list, 'request': request})
 
 
 def educational_institution_type(request, educational_institution_type_id=1):
@@ -33,8 +48,15 @@ def educational_institution_type(request, educational_institution_type_id=1):
 
 
 def educational_directions(request):
+    query = request.GET.get("q")
+    if query:
+        educational_direction_list = Educational_direction.objects.filter(
+            Q(educational_direction_name__icontains=query)
+        )
+    else:
+        educational_direction_list = Educational_direction.objects.all
     return render_to_response('educational_directions.html',
-                              {'educational_directions': Educational_direction.objects.all})
+                              {'educational_directions': educational_direction_list, 'request': request})
 
 
 def educational_direction(request, educational_direction_id=1):
@@ -43,8 +65,15 @@ def educational_direction(request, educational_direction_id=1):
 
 
 def educational_methods(request):
+    query = request.GET.get("q")
+    if query:
+        educational_method_list = Educational_method.objects.filter(
+            Q(educational_method_name__icontains=query)
+        )
+    else:
+        educational_method_list = Educational_method.objects.all
     return render_to_response('educational_methods.html',
-                              {'educational_methods': Educational_method.objects.all})
+                              {'educational_methods': educational_method_list, 'request': request})
 
 
 def educational_method(request, educational_method_id=1):
@@ -53,7 +82,14 @@ def educational_method(request, educational_method_id=1):
 
 
 def faculties(request):
-    return render_to_response('faculties.html', {'faculties': Faculty.objects.all})
+    query = request.GET.get("q")
+    if query:
+        faculty_list = Faculty.objects.filter(
+            Q(faculty_name__icontains=query)
+        )
+    else:
+        faculty_list = Faculty.objects.all
+    return render_to_response('faculties.html', {'faculties': faculty_list, 'request': request})
 
 
 def faculty(request, faculty_id=1):
@@ -61,7 +97,14 @@ def faculty(request, faculty_id=1):
 
 
 def payment_types(request):
-    return render_to_response('payment_types.html', {'payment_types': Type_of_payment_for_education.objects.all})
+    query = request.GET.get("q")
+    if query:
+        type_of_payment_for_education_list = Type_of_payment_for_education.objects.filter(
+            Q(type_of_payment_for_education__icontains=query)
+        )
+    else:
+        type_of_payment_for_education_list = Type_of_payment_for_education.objects.all
+    return render_to_response('payment_types.html', {'payment_types': type_of_payment_for_education_list, 'request': request})
 
 
 def payment_type(request, payment_type_id=1):
@@ -70,7 +113,14 @@ def payment_type(request, payment_type_id=1):
 
 
 def students(request):
-    return render_to_response('students.html', {'students': Student.objects.all})
+    query = request.GET.get("q")
+    if query:
+        student_list = Student.objects.filter(
+            Q(student_name__icontains=query)
+        )
+    else:
+        student_list = Student.objects.all
+    return render_to_response('students.html', {'students': student_list, 'request': request})
 
 
 def student(request, student_id=1):

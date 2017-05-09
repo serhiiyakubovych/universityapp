@@ -1,12 +1,21 @@
 {% extends 'main.html' %}
 
 {% block educational_institution %}
+<h1 class="text-center">Cities</h1>
+<hr>
+<div class="search-block">
+    <form action="">
+        <input type="text" name="q" class="form-control" placeholder="Search" value="{{ request.GET.q }}" >
+        <input type="submit" class="btn btn-primary btn-block" value="Search">
+    </form>
+</div>
+<hr>
 {% for city in cities %}
-<h1>
+<h2>
     <a href="../get/{{ city.id }}">
         {{ city.city_name }}
     </a>
-</h1>
+</h2>
 <p><b>Population:</b> {{ city.population }}</p>
 <hr>
 {% endfor %}

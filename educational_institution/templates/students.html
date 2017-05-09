@@ -1,12 +1,21 @@
 {% extends 'main.html' %}
 
 {% block educational_institution %}
+<h1 class="text-center">Students</h1>
+<hr>
+<div class="search-block">
+    <form action="">
+        <input type="text" name="q" class="form-control" placeholder="Search" value="{{ request.GET.q }}" >
+        <input type="submit" class="btn btn-primary btn-block" value="Search">
+    </form>
+</div>
+<hr>
 {% for student in students %}
-<h1>
+<h2>
     <a href="../get/{{ student.id }}">
         {{ student.student_name }}
     </a>
-</h1>
+</h2>
 <p><b>Average mark:</b> {{ student.average_mark }}</p>
 <p><b>Birth date:</b> {{ student.birth_date }}</p>
 <p><b>City:</b> {{ student.city }}</p>

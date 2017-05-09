@@ -1,12 +1,21 @@
 {% extends 'main.html' %}
 
 {% block educational_institution %}
+<h1 class="text-center">Educational institution methods</h1>
+<hr>
+<div class="search-block">
+    <form action="">
+        <input type="text" name="q" class="form-control" placeholder="Search" value="{{ request.GET.q }}" >
+        <input type="submit" class="btn btn-primary btn-block" value="Search">
+    </form>
+</div>
+<hr>
 {% for educational_method in educational_methods %}
-<h1>
+<h2>
     <a href="../get/{{ educational_method.id }}/">
         {{ educational_method.educational_method_name }}
     </a>
-</h1>
+</h2>
 <hr>
 {% endfor %}
 {% endblock %}

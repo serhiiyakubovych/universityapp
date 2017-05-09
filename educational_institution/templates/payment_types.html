@@ -1,12 +1,21 @@
 {% extends 'main.html' %}
 
 {% block educational_institution %}
+<h1 class="text-center">Payment types</h1>
+<hr>
+<div class="search-block">
+    <form action="">
+        <input type="text" name="q" class="form-control" placeholder="Search" value="{{ request.GET.q }}" >
+        <input type="submit" class="btn btn-primary btn-block" value="Search">
+    </form>
+</div>
+<hr>
 {% for payment_type in payment_types %}
-<h1>
+<h2>
     <a href="../get/{{ payment_type.id }}">
         {{ payment_type.type_of_payment_for_education }}
     </a>
-</h1>
+</h2>
 <hr>
 {% endfor %}
 {% endblock %}

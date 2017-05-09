@@ -1,9 +1,10 @@
 .page-nav {
   float: left;
-  padding: 0 5px;
+  padding: 5px;
   width: 30%;
   background: #fff;
   text-align: center;
+  box-shadow: 0 0 15px #000;
   background: #03A9F4; }
   .page-nav .page-nav__logo {
     padding: 29px 0; }
@@ -27,7 +28,7 @@
         color: #fff;
         text-transform: uppercase; }
         .page-nav .page-nav__menu .page-nav__menu-item a:hover {
-          background: #FFC107; }
+          background: #fff; color: #000; }
         .page-nav .page-nav__menu .page-nav__menu-item a:hover, .page-nav .page-nav__menu .page-nav__menu-item a:focus {
           text-decoration: none; }
         .page-nav .page-nav__menu .page-nav__menu-item a.active {
